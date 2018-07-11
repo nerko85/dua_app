@@ -37,6 +37,7 @@ const FormComponent = (props) => {
     return (
         <form >
             <input type="text" name="title" onChange={props.change}/>
+            <button>Submit Dua</button>
         </form>
     );
 };
