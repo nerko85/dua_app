@@ -2,6 +2,7 @@
 import Head from 'next/head'
 import Navigation from './Header/Navigation'
 import Footer from './Footer/Footer'
+import '.Layout.css';
 
 const Layout = (props) => ( 
     <div>
