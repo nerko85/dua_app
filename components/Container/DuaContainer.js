@@ -32,7 +32,6 @@ export default class DuaWrapper extends Component {
         )
     }
 }
-
 const FormComponent = (props) => {
     return (
         <form >
