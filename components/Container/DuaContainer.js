@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {Card, Col} from 'antd'
+import css from'./DuaContainer.css'
 
 export default class DuaWrapper extends Component {
     state = {
@@ -6,7 +8,31 @@ export default class DuaWrapper extends Component {
             {
                 // id:undefined,
                 title: 'Nermin',
-                body: "nesto"
+                body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!"
+                // category: undefined,
+                // source: undefined,
+                // chain: undefined
+            },
+            {
+                // id:undefined,
+                title: 'Eso Ibada',
+                body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!"
+                // category: undefined,
+                // source: undefined,
+                // chain: undefined
+            },
+            {
+                // id:undefined,
+                title: 'Shalilalalaj',
+                body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!"
+                // category: undefined,
+                // source: undefined,
+                // chain: undefined
+            },
+            {
+                // id:undefined,
+                title: 'Sumeja',
+                body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!"
                 // category: undefined,
                 // source: undefined,
                 // chain: undefined
@@ -25,10 +51,15 @@ export default class DuaWrapper extends Component {
 
     render() {
         const duas = this.state.duas;
+        const novo = duas.map((item,index)=>{
+            return (
+                <Duas key={index} title={item.title} content={item.body}/>
+            )
+        })
         return (
-            <div>
-                <FormComponent change={this.onHandleChange.bind(this)} />
-            </div>
+            <React.Fragment>
+                {novo}
+            </React.Fragment>
         )
     }
 }
@@ -40,5 +71,16 @@ const FormComponent = (props) => {
         </form>
     );
 };
+
+const Duas = props => {
+    return (
+        <Col lg={{ span: 5}} className={css.test}>
+            <Card title={props.title} style={{ width: 300 }} >
+                <p>{props.content}</p>
+            </Card>
+        </Col>    
+    );
+};
+
 
 

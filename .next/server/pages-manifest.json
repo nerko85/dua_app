@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"/login":"bundles\\pages\\login.js","/_app":"bundles\\pages\\_app.js","/_error":"bundles\\pages\\_error.js","/_document":"bundles\\pages\\_document.js"}
-=======
-{"/index":"bundles/pages/index.js","/about":"bundles/pages/about.js","/_app":"bundles/pages/_app.js","/_error":"bundles/pages/_error.js","/_document":"bundles/pages/_document.js","/":"bundles/pages/index.js"}
->>>>>>> a4d92ef23bd1822f853b174cb2af4222ce78a94a
+{"/index":"bundles\\pages\\index.js","/about":"bundles\\pages\\about.js","/_app":"bundles\\pages\\_app.js","/_error":"bundles\\pages\\_error.js","/_document":"bundles\\pages\\_document.js","/":"bundles\\pages\\index.js"}
