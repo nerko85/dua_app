@@ -1,10 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-<<<<<<< HEAD
 import { Menu, Icon } from 'antd';
 // import css from './Navigation.css';
-=======
->>>>>>> a4d92ef23bd1822f853b174cb2af4222ce78a94a
 
 // const Navigation = (props) => {
 //     return (
