@@ -105,11 +105,15 @@ var Footer = function Footer() {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+<<<<<<< HEAD:.next/server/bundles/pages/login.js
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link__ = __webpack_require__("next/link");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_link__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_antd__ = __webpack_require__("antd");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_antd__);
 var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_project\\components\\Header\\Navigation.js";
+=======
+var _jsxFileName = "/home/abdurahman/Desktop/dua-react-app/components/Container/DuaContainer.js";
+>>>>>>> a4d92ef23bd1822f853b174cb2af4222ce78a94a:.next/server/bundles/pages/index.js
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -271,6 +275,30 @@ function (_React$Component) {
 /***/ (function(module, exports) {
 
 
+<<<<<<< HEAD:.next/server/bundles/pages/login.js
+=======
+var FormComponent = function FormComponent(props) {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("form", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
+    type: "text",
+    name: "title",
+    onChange: props.change,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
+    }
+  }, "Submit Dua"));
+};
+>>>>>>> a4d92ef23bd1822f853b174cb2af4222ce78a94a:.next/server/bundles/pages/index.js
 
 /***/ }),
 
@@ -280,6 +308,7 @@ function (_React$Component) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+<<<<<<< HEAD:.next/server/bundles/pages/login.js
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head__ = __webpack_require__("next/head");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_head__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Header_Navigation__ = __webpack_require__("./components/Header/Navigation.js");
@@ -287,59 +316,142 @@ function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Layout_css__ = __webpack_require__("./components/Layout.css");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Layout_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__Layout_css__);
 var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_project\\components\\Layout.js";
+=======
+var _jsxFileName = "/home/abdurahman/Desktop/dua-react-app/components/Footer/Footer.js";
+
+
+var Footer = function Footer() {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    }
+  }, "This is the footer"));
+};
+>>>>>>> a4d92ef23bd1822f853b174cb2af4222ce78a94a:.next/server/bundles/pages/index.js
 
 // import Navigation from './Header/Navigation'
 
 
 
+<<<<<<< HEAD:.next/server/bundles/pages/login.js
 
 
 var Layout = function Layout(props) {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+=======
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link__ = __webpack_require__("next/link");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_link__);
+var _jsxFileName = "/home/abdurahman/Desktop/dua-react-app/components/Header/Navigation.js";
+
+
+
+var Navigation = function Navigation(props) {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("ul", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+>>>>>>> a4d92ef23bd1822f853b174cb2af4222ce78a94a:.next/server/bundles/pages/index.js
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    }
+<<<<<<< HEAD:.next/server/bundles/pages/login.js
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_head___default.a, {
+=======
+  }, "Home"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
     }
-  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_head___default.a, {
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
+    href: "/about",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 8
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+>>>>>>> a4d92ef23bd1822f853b174cb2af4222ce78a94a:.next/server/bundles/pages/index.js
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 9
     }
   }, "Dua application"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
     rel: "stylesheet",
     href: "/_next/static/style.css",
     __source: {
       fileName: _jsxFileName,
+<<<<<<< HEAD:.next/server/bundles/pages/login.js
       lineNumber: 11
+=======
+      lineNumber: 9
+>>>>>>> a4d92ef23bd1822f853b174cb2af4222ce78a94a:.next/server/bundles/pages/index.js
     }
   }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
     rel: "stylesheet",
     href: "../node_modules/antd/dist/antd.css",
     __source: {
       fileName: _jsxFileName,
+<<<<<<< HEAD:.next/server/bundles/pages/login.js
       lineNumber: 12
+=======
+      lineNumber: 9
+>>>>>>> a4d92ef23bd1822f853b174cb2af4222ce78a94a:.next/server/bundles/pages/index.js
     }
   }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
     rel: "stylesheet",
     href: "https://cdnjs.cloudflare.com/ajax/libs/antd/3.7.0/antd.css",
     __source: {
       fileName: _jsxFileName,
+<<<<<<< HEAD:.next/server/bundles/pages/login.js
       lineNumber: 13
+=======
+      lineNumber: 10
+>>>>>>> a4d92ef23bd1822f853b174cb2af4222ce78a94a:.next/server/bundles/pages/index.js
     }
   })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Header_Navigation__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
+<<<<<<< HEAD:.next/server/bundles/pages/login.js
       lineNumber: 15
+=======
+      lineNumber: 10
+>>>>>>> a4d92ef23bd1822f853b174cb2af4222ce78a94a:.next/server/bundles/pages/index.js
     }
   }), props.children, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Footer_Footer__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
+<<<<<<< HEAD:.next/server/bundles/pages/login.js
       lineNumber: 17
+=======
+      lineNumber: 10
+>>>>>>> a4d92ef23bd1822f853b174cb2af4222ce78a94a:.next/server/bundles/pages/index.js
     }
   }));
 };
@@ -354,9 +466,17 @@ var Layout = function Layout(props) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+<<<<<<< HEAD:.next/server/bundles/pages/login.js
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd__ = __webpack_require__("antd");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd__);
 var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_project\\components\\Login\\Login.js";
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head__ = __webpack_require__("next/head");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_head__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Header_Navigation__ = __webpack_require__("./components/Header/Navigation.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Footer_Footer__ = __webpack_require__("./components/Footer/Footer.js");
+var _jsxFileName = "/home/abdurahman/Desktop/dua-react-app/components/Layout.js";
+>>>>>>> a4d92ef23bd1822f853b174cb2af4222ce78a94a:.next/server/bundles/pages/index.js
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -529,8 +649,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Layout__ = __webpack_require__("./components/Layout.js");
+<<<<<<< HEAD:.next/server/bundles/pages/login.js
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Login_Login__ = __webpack_require__("./components/Login/Login.js");
 var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_project\\pages\\login.js";
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Container_DuaContainer__ = __webpack_require__("./components/Container/DuaContainer.js");
+var _jsxFileName = "/home/abdurahman/Desktop/dua-react-app/pages/index.js";
+>>>>>>> a4d92ef23bd1822f853b174cb2af4222ce78a94a:.next/server/bundles/pages/index.js
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
