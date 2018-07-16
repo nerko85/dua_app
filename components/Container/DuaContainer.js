@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Card, Col} from 'antd'
+import {Card, Col, Icon} from 'antd'
 import css from'./DuaContainer.css'
 
 export default class DuaWrapper extends Component {
@@ -8,7 +8,8 @@ export default class DuaWrapper extends Component {
             {
                 // id:undefined,
                 title: 'Nermin',
-                body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!"
+                body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!",
+                favourite: true
                 // category: undefined,
                 // source: undefined,
                 // chain: undefined
@@ -16,7 +17,8 @@ export default class DuaWrapper extends Component {
             {
                 // id:undefined,
                 title: 'Eso Ibada',
-                body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!"
+                body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!",
+                favourite: false
                 // category: undefined,
                 // source: undefined,
                 // chain: undefined
@@ -24,7 +26,8 @@ export default class DuaWrapper extends Component {
             {
                 // id:undefined,
                 title: 'Shalilalalaj',
-                body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!"
+                body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!",
+                favourite: false
                 // category: undefined,
                 // source: undefined,
                 // chain: undefined
@@ -32,7 +35,8 @@ export default class DuaWrapper extends Component {
             {
                 // id:undefined,
                 title: 'Sumeja',
-                body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!"
+                body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!",
+                favourite: false
                 // category: undefined,
                 // source: undefined,
                 // chain: undefined
@@ -53,7 +57,7 @@ export default class DuaWrapper extends Component {
         const duas = this.state.duas;
         const novo = duas.map((item,index)=>{
             return (
-                <Duas key={index} title={item.title} content={item.body}/>
+                <Duas key={index} title={item.title} content={item.body} favourite={item.favourite}/>
             )
         })
         return (
@@ -72,15 +76,31 @@ const FormComponent = (props) => {
     );
 };
 
-const Duas = props => {
-    return (
-        <Col lg={{ span: 5}} className={css.test}>
-            <Card title={props.title} style={{ width: 300 }} >
-                <p>{props.content}</p>
-            </Card>
-        </Col>    
-    );
-};
+// const Duas = props => {
+//     return (
+//         <Col lg={{ span: 5}} className={css.test}>
+//             <Card title={props.title} style={{ width: 300 }} extra={<a href="#"><Icon type="star-o" /></a>} >
+//                 <p>{props.content}</p>
+//             </Card>
+//         </Col>    
+//     );
+// };
+
+class Duas extends Component {
+    render() {
+        const {title, content, favourite} = this.props;
+        const proba = favourite ? <Icon type="star" /> : <Icon type="star-o" />;
+        return (
+            <Col lg={{ span: 5}} className={css.test}>
+                <Card title={title} style={{ width: 300 }} extra={<a href="#">{favourite ? <Icon type="star" /> : <Icon type="star-o" />}</a>} >
+                    <p>{content}</p>
+                </Card>
+            </Col>  
+        )
+    }
+}
+
+
 
 
 
