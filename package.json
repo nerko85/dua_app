@@ -18,7 +18,8 @@
     "less": "^3.7.1",
     "next": "^6.1.1",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "style-loader": "^0.21.0"
   },
   "devDependencies": {
     "css-loader": "^1.0.0",

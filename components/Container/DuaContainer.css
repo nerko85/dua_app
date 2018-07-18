@@ -1,3 +1,13 @@
 .test {
     margin: 20px;
 }
+
+.ant-card {
+    cursor: pointer;
+}
+
+.ant-card:hover .ant-card-head {
+    background: lightskyblue;
+    transition: all 600ms ease;
+}
+

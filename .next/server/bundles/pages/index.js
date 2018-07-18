@@ -75,9 +75,7 @@ module.exports =
 /***/ "./components/Container/DuaContainer.css":
 /***/ (function(module, exports) {
 
-module.exports = {
-	"test": "test___3vMxg"
-};
+
 
 /***/ }),
 
@@ -92,7 +90,7 @@ module.exports = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DuaContainer_css__ = __webpack_require__("./components/Container/DuaContainer.css");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DuaContainer_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__DuaContainer_css__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\newProject\\dua-react-app\\components\\Container\\DuaContainer.js";
+var _jsxFileName = "/Users/Nermin/Desktop/duaApp/components/Container/DuaContainer.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -112,67 +110,76 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 
 
+
 var DuaWrapper =
 /*#__PURE__*/
 function (_Component) {
   _inherits(DuaWrapper, _Component);
 
-  function DuaWrapper() {
-    var _ref;
-
-    var _temp, _this;
+  function DuaWrapper(props) {
+    var _this;
 
     _classCallCheck(this, DuaWrapper);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+    _this = _possibleConstructorReturn(this, (DuaWrapper.__proto__ || Object.getPrototypeOf(DuaWrapper)).call(this, props));
+    _this.state = {
+      duas: [{
+        // id:undefined,
+        title: 'Nermin',
+        body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!",
+        favourite: true // category: undefined,
+        // source: undefined,
+        // chain: undefined
 
-    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_ref = DuaWrapper.__proto__ || Object.getPrototypeOf(DuaWrapper)).call.apply(_ref, [this].concat(args))), Object.defineProperty(_assertThisInitialized(_this), "state", {
-      configurable: true,
-      enumerable: true,
-      writable: true,
-      value: {
-        duas: [{
-          // id:undefined,
-          title: 'Nermin',
-          body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!",
-          favourite: true // category: undefined,
-          // source: undefined,
-          // chain: undefined
+      }, {
+        // id:undefined,
+        title: 'Eso Ibada',
+        body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!",
+        favourite: false // category: undefined,
+        // source: undefined,
+        // chain: undefined
 
-        }, {
-          // id:undefined,
-          title: 'Eso Ibada',
-          body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!",
-          favourite: false // category: undefined,
-          // source: undefined,
-          // chain: undefined
+      }, {
+        // id:undefined,
+        title: 'Shalilalalaj',
+        body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!",
+        favourite: false // category: undefined,
+        // source: undefined,
+        // chain: undefined
 
-        }, {
-          // id:undefined,
-          title: 'Shalilalalaj',
-          body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!",
-          favourite: false // category: undefined,
-          // source: undefined,
-          // chain: undefined
+      }, {
+        // id:undefined,
+        title: 'Sumeja',
+        body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!",
+        favourite: false // category: undefined,
+        // source: undefined,
+        // chain: undefined
 
-        }, {
-          // id:undefined,
-          title: 'Sumeja',
-          body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!",
-          favourite: false // category: undefined,
-          // source: undefined,
-          // chain: undefined
-
-        }]
-      }
-    }), _temp));
+      }]
+    };
+    _this.changeFav = _this.changeFav.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(DuaWrapper, [{
-    key: "onHandleChange",
-    value: function onHandleChange(e) {
+    key: "changeFav",
+    value: function changeFav(item) {
+      var duas = this.state.duas; // console.log(duas)
+
+      var changed = duas.map(function (element) {
+        if (element.title === item.title) {
+          element.favourite = !element.favourite;
+        }
+
+        return element;
+      });
+      this.setState({
+        duas: changed
+      });
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(e) {
       var value = e.target.value;
       var duas = this.state.duas;
       var results = duas.filter(function (dua) {
@@ -183,6 +190,8 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var duas = this.state.duas;
       var novo = duas.map(function (item, index) {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Duas, {
@@ -190,16 +199,17 @@ function (_Component) {
           title: item.title,
           content: item.body,
           favourite: item.favourite,
+          changeFav: _this2.changeFav,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 60
+            lineNumber: 79
           }
         });
       });
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Fragment, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 83
         }
       }, novo);
     }
@@ -214,7 +224,7 @@ var FormComponent = function FormComponent(props) {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("form", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 93
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
     type: "text",
@@ -222,12 +232,12 @@ var FormComponent = function FormComponent(props) {
     onChange: props.change,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 94
     }
   }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 95
     }
   }, "Submit Dua"));
 }; // const Duas = props => {
@@ -246,10 +256,14 @@ var Duas =
 function (_Component2) {
   _inherits(Duas, _Component2);
 
-  function Duas() {
+  function Duas(props) {
+    var _this3;
+
     _classCallCheck(this, Duas);
 
-    return _possibleConstructorReturn(this, (Duas.__proto__ || Object.getPrototypeOf(Duas)).apply(this, arguments));
+    _this3 = _possibleConstructorReturn(this, (Duas.__proto__ || Object.getPrototypeOf(Duas)).call(this, props));
+    _this3.favHandler = _this3.favHandler.bind(_assertThisInitialized(_this3));
+    return _this3;
   }
 
   _createClass(Duas, [{
@@ -263,23 +277,23 @@ function (_Component2) {
         type: "star",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92
+          lineNumber: 117
         }
       }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], {
         type: "star-o",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92
+          lineNumber: 117
         }
       });
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Col"], {
         lg: {
           span: 5
         },
-        className: __WEBPACK_IMPORTED_MODULE_2__DuaContainer_css___default.a.test,
+        className: "test",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 94
+          lineNumber: 119
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Card"], {
         title: title,
@@ -288,33 +302,42 @@ function (_Component2) {
         },
         extra: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
           href: "#",
+          onClick: this.favHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 95
+            lineNumber: 120
           }
-        }, favourite ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], {
+        }, " ", favourite ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], {
           type: "star",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 95
+            lineNumber: 120
           }
         }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], {
           type: "star-o",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 95
+            lineNumber: 120
           }
         })),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 120
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+        className: "proba",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 121
         }
       }, content)));
+    }
+  }, {
+    key: "favHandler",
+    value: function favHandler(e) {
+      e.preventDefault();
+      var changeFav = this.props.changeFav;
+      changeFav(this.props); // console.log(this)
     }
   }]);
 
@@ -329,7 +352,7 @@ function (_Component2) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\newProject\\dua-react-app\\components\\Footer\\Footer.js";
+var _jsxFileName = "/Users/Nermin/Desktop/duaApp/components/Footer/Footer.js";
 
 
 var Footer = function Footer() {
@@ -360,7 +383,7 @@ var Footer = function Footer() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_link__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_antd__ = __webpack_require__("antd");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_antd__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\newProject\\dua-react-app\\components\\Header\\Navigation.js";
+var _jsxFileName = "/Users/Nermin/Desktop/duaApp/components/Header/Navigation.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -539,7 +562,7 @@ function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Layout_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__Layout_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_antd__ = __webpack_require__("antd");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_antd__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\newProject\\dua-react-app\\components\\Layout.js";
+var _jsxFileName = "/Users/Nermin/Desktop/duaApp/components/Layout.js";
 
 // import Navigation from './Header/Navigation'
 
@@ -656,7 +679,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Container_DuaContainer__ = __webpack_require__("./components/Container/DuaContainer.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_antd__ = __webpack_require__("antd");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_antd__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\newProject\\dua-react-app\\pages\\index.js";
+var _jsxFileName = "/Users/Nermin/Desktop/duaApp/pages/index.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
