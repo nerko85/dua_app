@@ -147,8 +147,3 @@ class Duas extends Component {
         this.setState({ modalVisible });
       }
 }
-
-
-
-
-

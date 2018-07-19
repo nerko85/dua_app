@@ -208,7 +208,7 @@ function (_Component) {
 
       var results = this.state.results;
       var duas = this.state.duas;
-      var test = results.length == 0 ? duas : results;
+      var test = results === undefined || results.length == 0 ? duas : results;
       var novo = test.map(function (item, index) {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Duas, {
           key: index,
@@ -245,16 +245,7 @@ function (_Component) {
   }]);
 
   return DuaWrapper;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]); // const Duas = props => {
-//     return (
-//         <Col lg={{ span: 5}} className={css.test}>
-//             <Card title={props.title} style={{ width: 300 }} extra={<a href="#"><Icon type="star-o" /></a>} >
-//                 <p>{props.content}</p>
-//             </Card>
-//         </Col>    
-//     );
-// };
-
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 
 
@@ -289,19 +280,19 @@ function (_Component2) {
         type: "star",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 128
+          lineNumber: 118
         }
       }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], {
         type: "star-o",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 128
+          lineNumber: 118
         }
       });
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130
+          lineNumber: 120
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Col"], {
         lg: {
@@ -313,7 +304,7 @@ function (_Component2) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131
+          lineNumber: 121
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Card"], {
         title: title,
@@ -325,30 +316,30 @@ function (_Component2) {
           onClick: this.favHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 132
+            lineNumber: 122
           }
         }, " ", favourite ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], {
           type: "star",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 132
+            lineNumber: 122
           }
         }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], {
           type: "star-o",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 132
+            lineNumber: 122
           }
         })),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 132
+          lineNumber: 122
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
         className: "proba",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133
+          lineNumber: 123
         }
       }, content))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Modal"], {
         title: title,
@@ -362,12 +353,12 @@ function (_Component2) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 136
+          lineNumber: 126
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 143
+          lineNumber: 133
         }
       }, content)));
     }
