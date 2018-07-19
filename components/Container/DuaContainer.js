@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Card, Col, Icon } from 'antd'
-import css from'./DuaContainer.css'
+import { Card, Col, Row, Icon, Modal } from 'antd'
+// import css from'./DuaContainer.css'
 import './DuaContainer.css';
+import SearchComponent from '../Forms/SearchComponent';
 
 export default class DuaWrapper extends Component {
     constructor(props){
@@ -63,16 +64,18 @@ export default class DuaWrapper extends Component {
         })
     }
 
-    handleChange(e) {
-        const value = e.target.value;
-        const duas = this.state.duas;
-        const results = duas.filter(dua => {
-            const regex = new RegExp(value, 'gi')
-            return dua.title.match(regex) || dua.body.match(regex)
-        })
+    handleChange(value) {
+        console.log(vlaue)
+        // const value = e.target.value;
+        // const duas = this.state.duas;
+        // const results = duas.filter(dua => {
+        //     const regex = new RegExp(value, 'gi')
+        //     return dua.title.match(regex) || dua.body.match(regex)
+        // })
     }
 
     render() {
+        const search = < SearchComponent handleChange={this.handleChange}/>
         const duas = this.state.duas;
         const novo = duas.map((item,index)=>{
             return (
@@ -81,21 +84,14 @@ export default class DuaWrapper extends Component {
         })
         return (
             <React.Fragment>
-                {novo}
+                <SearchComponent />
+                <Row type="flex" justify="space-between">
+                    {novo}
+                </Row>
             </React.Fragment>
         )
     }
 }
-
-
-const FormComponent = (props) => {
-    return (
-        <form >
-            <input type="text" name="title" onChange={props.change}/>
-            <button>Submit Dua</button>
-        </form>
-    );
-};
 
 // const Duas = props => {
 //     return (
@@ -111,16 +107,30 @@ class Duas extends Component {
     constructor(props){
         super(props);
         this.favHandler = this.favHandler.bind(this);
+        this.state = {
+            modalVisible: false,
+          }
     }
     render() {
         const { title, content, favourite } = this.props;
         const proba = favourite ? <Icon type="star" /> : <Icon type="star-o" />;
         return (
-            <Col lg={{ span: 5}} className='test'>
-                <Card title={title} style={{ width: 300 }} extra={<a href="#" onClick={this.favHandler}> {favourite ? <Icon type="star" /> : <Icon type="star-o" />}</a>} >
-                    <p className='proba'>{content}</p>
-                </Card>
-            </Col>  
+            <div>
+                <Col lg={{ span: 6}} className="gutter-row" onClick={() => this.setVisible(true)} >
+                    <Card title={title} style={{ width: 300 }} extra={<a href="#" onClick={this.favHandler}> {favourite ? <Icon type="star" /> : <Icon type="star-o" />}</a>} >
+                        <p className='proba'>{content}</p>
+                    </Card>
+                </Col>
+                <Modal
+                    title={title}
+                    wrapClassName="vertical-center-modal"
+                    visible={this.state.modalVisible}
+                    onOk={() => this.setVisible(false)}
+                    onCancel={() => this.setVisible(false)}
+                    >
+                    <p>{content}</p>
+                </Modal>  
+            </div>
         )
     }
 
@@ -130,6 +140,10 @@ class Duas extends Component {
         changeFav(this.props)
         // console.log(this)
     }
+
+    setVisible(modalVisible) {
+        this.setState({ modalVisible });
+      }
 }
 
 

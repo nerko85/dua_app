@@ -1,11 +1,12 @@
 // import Navigation from './Header/Navigation'
 import Head from 'next/head'
-import Navigation from './Header/Navigation'
-import Footer from './Footer/Footer'
+import Navigation from './Layout/Header/Navigation'
+// import Footer from './Layout/Footer/Footer'
 import './Layout.css';
+import SearchComponent from '../components/Forms/SearchComponent';
 import { Row, Col, Input } from 'antd';
 
-const Search = Input.Search;
+
 const Layout = (props) => ( 
     <div>
         <Head>
@@ -18,18 +19,12 @@ const Layout = (props) => (
         <br/><br/>
         <Row>
             <Col span={18} offset={3}>
-                <Search
-                    placeholder="input search text"
-                    enterButton="Search"
-                    size="large"
-                    onSearch={value => console.log(value)}
-                />
+                <SearchComponent />
             </Col>
         </Row>
         <Row gutter={16} type="flex" justify="center">
             {props.children}
         </Row>
-        <Footer/>
     </div>
 )
 
