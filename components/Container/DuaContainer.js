@@ -39,15 +39,17 @@ export default class DuaWrapper extends Component {
                 {
                     // id:undefined,
                     title: 'Sumeja',
-                    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!",
+                    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto! Test",
                     favourite: false
                     // category: undefined,
                     // source: undefined,
                     // chain: undefined
                 }
-            ]
+            ],
+            results: []
         }
         this.changeFav = this.changeFav.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     changeFav(item){
@@ -65,26 +67,36 @@ export default class DuaWrapper extends Component {
     }
 
     handleChange(value) {
-        console.log(vlaue)
         // const value = e.target.value;
-        // const duas = this.state.duas;
-        // const results = duas.filter(dua => {
-        //     const regex = new RegExp(value, 'gi')
-        //     return dua.title.match(regex) || dua.body.match(regex)
-        // })
+        const duas = this.state.duas;
+        const results = duas.filter(dua => {
+            const regex = new RegExp(value, 'gi')
+            return dua.title.match(regex) || dua.body.match(regex)
+        })
+
+        if(value){
+            this.setState({
+                results: results
+            })
+        }else{
+            this.setState({
+                results: []
+            })
+        }
     }
 
     render() {
-        const search = < SearchComponent handleChange={this.handleChange}/>
+        const results = this.state.results;
         const duas = this.state.duas;
-        const novo = duas.map((item,index)=>{
+        const test = (results.length == 0)? duas : results;
+        const novo = test.map((item,index)=>{
             return (
                 <Duas key={index} title={item.title} content={item.body} favourite={item.favourite} changeFav={this.changeFav}/>
             )
         })
         return (
             <React.Fragment>
-                <SearchComponent />
+                <SearchComponent handleChange={this.handleChange}/>
                 <Row type="flex" justify="space-between">
                     {novo}
                 </Row>

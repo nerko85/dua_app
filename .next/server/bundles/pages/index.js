@@ -152,14 +152,16 @@ function (_Component) {
       }, {
         // id:undefined,
         title: 'Sumeja',
-        body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto!",
+        body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, iusto! Test",
         favourite: false // category: undefined,
         // source: undefined,
         // chain: undefined
 
-      }]
+      }],
+      results: []
     };
     _this.changeFav = _this.changeFav.bind(_assertThisInitialized(_this));
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -182,27 +184,32 @@ function (_Component) {
   }, {
     key: "handleChange",
     value: function handleChange(value) {
-      console.log(vlaue); // const value = e.target.value;
-      // const duas = this.state.duas;
-      // const results = duas.filter(dua => {
-      //     const regex = new RegExp(value, 'gi')
-      //     return dua.title.match(regex) || dua.body.match(regex)
-      // })
+      // const value = e.target.value;
+      var duas = this.state.duas;
+      var results = duas.filter(function (dua) {
+        var regex = new RegExp(value, 'gi');
+        return dua.title.match(regex) || dua.body.match(regex);
+      });
+
+      if (value) {
+        this.setState({
+          results: results
+        });
+      } else {
+        this.setState({
+          results: []
+        });
+      }
     }
   }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
-      var search = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Forms_SearchComponent__["a" /* default */], {
-        handleChange: this.handleChange,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 78
-        }
-      });
+      var results = this.state.results;
       var duas = this.state.duas;
-      var novo = duas.map(function (item, index) {
+      var test = results.length == 0 ? duas : results;
+      var novo = test.map(function (item, index) {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Duas, {
           key: index,
           title: item.title,
@@ -211,26 +218,27 @@ function (_Component) {
           changeFav: _this2.changeFav,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 82
+            lineNumber: 94
           }
         });
       });
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Fragment, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86
+          lineNumber: 98
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Forms_SearchComponent__["a" /* default */], {
+        handleChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 99
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Row"], {
         type: "flex",
         justify: "space-between",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 100
         }
       }, novo));
     }
@@ -281,19 +289,19 @@ function (_Component2) {
         type: "star",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116
+          lineNumber: 128
         }
       }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], {
         type: "star-o",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116
+          lineNumber: 128
         }
       });
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118
+          lineNumber: 130
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Col"], {
         lg: {
@@ -305,7 +313,7 @@ function (_Component2) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 119
+          lineNumber: 131
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Card"], {
         title: title,
@@ -317,30 +325,30 @@ function (_Component2) {
           onClick: this.favHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 120
+            lineNumber: 132
           }
         }, " ", favourite ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], {
           type: "star",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 120
+            lineNumber: 132
           }
         }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], {
           type: "star-o",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 120
+            lineNumber: 132
           }
         })),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 120
+          lineNumber: 132
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
         className: "proba",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 121
+          lineNumber: 133
         }
       }, content))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Modal"], {
         title: title,
@@ -354,12 +362,12 @@ function (_Component2) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124
+          lineNumber: 136
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131
+          lineNumber: 143
         }
       }, content)));
     }
@@ -456,9 +464,8 @@ function (_Component) {
     value: function onChange(e) {
       var handleChange = this.props.handleChange;
       e.preventDefault();
-      var value = e.target.value; // handleChange(value);
-
-      console.log(handleChange); // console.log(e.target.value)
+      var value = e.target.value;
+      handleChange(value); // console.log(e.target.value)
     }
   }]);
 

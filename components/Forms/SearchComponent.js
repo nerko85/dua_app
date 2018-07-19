@@ -28,8 +28,7 @@ class SearchComponent extends Component {
         const { handleChange } = this.props;
         e.preventDefault();
         const value = e.target.value;
-        // handleChange(value);
-        console.log(handleChange)
+        handleChange(value);
         // console.log(e.target.value)
     }
 }
