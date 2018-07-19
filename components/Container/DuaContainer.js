@@ -105,16 +105,6 @@ export default class DuaWrapper extends Component {
     }
 }
 
-// const Duas = props => {
-//     return (
-//         <Col lg={{ span: 5}} className={css.test}>
-//             <Card title={props.title} style={{ width: 300 }} extra={<a href="#"><Icon type="star-o" /></a>} >
-//                 <p>{props.content}</p>
-//             </Card>
-//         </Col>    
-//     );
-// };
-
 class Duas extends Component {
     constructor(props){
         super(props);
