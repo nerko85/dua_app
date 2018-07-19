@@ -88,7 +88,7 @@ export default class DuaWrapper extends Component {
     render() {
         const results = this.state.results;
         const duas = this.state.duas;
-        const test = (results.length == 0)? duas : results;
+        const test = (results === undefined || results.length == 0)? duas : results;
         const novo = test.map((item,index)=>{
             return (
                 <Duas key={index} title={item.title} content={item.body} favourite={item.favourite} changeFav={this.changeFav}/>
