@@ -46,7 +46,8 @@ export default class DuaWrapper extends Component {
                     // chain: undefined
                 }
             ],
-            results: []
+            results: [],
+            prayers: []
         }
         this.changeFav = this.changeFav.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -84,10 +85,27 @@ export default class DuaWrapper extends Component {
             })
         }
     }
+    
+    fetch(){
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = now.getMonth() + 2;
+
+        console.log(month)
+        const endpoint = `http://api.aladhan.com/v1/calendar?latitude=44.206583&longitude=17.906376&method=2&month=${month}&year=${year}`;
+
+        fetch(endpoint).then(blob => blob.json()).then(resp => this.setState({
+            prayers: resp.data
+        }))
+    }
+
+    componentDidMount(){
+        this.fetch()
+    }
 
     render() {
-        const results = this.state.results;
-        const duas = this.state.duas;
+        const {duas, results, prayers} = this.state;
+        console.log(prayers)
         const test = (results === undefined || results.length == 0)? duas : results;
         const novo = test.map((item,index)=>{
             return (

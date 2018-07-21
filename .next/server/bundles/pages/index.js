@@ -158,7 +158,8 @@ function (_Component) {
         // chain: undefined
 
       }],
-      results: []
+      results: [],
+      prayers: []
     };
     _this.changeFav = _this.changeFav.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
@@ -202,12 +203,48 @@ function (_Component) {
       }
     }
   }, {
-    key: "render",
-    value: function render() {
+    key: "fetch",
+    value: function (_fetch) {
+      function fetch() {
+        return _fetch.apply(this, arguments);
+      }
+
+      fetch.toString = function () {
+        return _fetch.toString();
+      };
+
+      return fetch;
+    }(function () {
       var _this2 = this;
 
-      var results = this.state.results;
-      var duas = this.state.duas;
+      var now = new Date();
+      var year = now.getFullYear();
+      var month = now.getMonth() + 2;
+      console.log(month);
+      var endpoint = "http://api.aladhan.com/v1/calendar?latitude=44.206583&longitude=17.906376&method=2&month=".concat(month, "&year=").concat(year);
+      fetch(endpoint).then(function (blob) {
+        return blob.json();
+      }).then(function (resp) {
+        return _this2.setState({
+          prayers: resp.data
+        });
+      });
+    })
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.fetch();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      var _state = this.state,
+          duas = _state.duas,
+          results = _state.results,
+          prayers = _state.prayers;
+      console.log(prayers);
       var test = results === undefined || results.length == 0 ? duas : results;
       var novo = test.map(function (item, index) {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Duas, {
@@ -215,30 +252,30 @@ function (_Component) {
           title: item.title,
           content: item.body,
           favourite: item.favourite,
-          changeFav: _this2.changeFav,
+          changeFav: _this3.changeFav,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 94
+            lineNumber: 112
           }
         });
       });
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Fragment, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 98
+          lineNumber: 116
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Forms_SearchComponent__["a" /* default */], {
         handleChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 99
+          lineNumber: 117
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Row"], {
         type: "flex",
         justify: "space-between",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100
+          lineNumber: 118
         }
       }, novo));
     }
@@ -255,22 +292,22 @@ function (_Component2) {
   _inherits(Duas, _Component2);
 
   function Duas(props) {
-    var _this3;
+    var _this4;
 
     _classCallCheck(this, Duas);
 
-    _this3 = _possibleConstructorReturn(this, (Duas.__proto__ || Object.getPrototypeOf(Duas)).call(this, props));
-    _this3.favHandler = _this3.favHandler.bind(_assertThisInitialized(_this3));
-    _this3.state = {
+    _this4 = _possibleConstructorReturn(this, (Duas.__proto__ || Object.getPrototypeOf(Duas)).call(this, props));
+    _this4.favHandler = _this4.favHandler.bind(_assertThisInitialized(_this4));
+    _this4.state = {
       modalVisible: false
     };
-    return _this3;
+    return _this4;
   }
 
   _createClass(Duas, [{
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this5 = this;
 
       var _props = this.props,
           title = _props.title,
@@ -280,19 +317,19 @@ function (_Component2) {
         type: "star",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118
+          lineNumber: 136
         }
       }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], {
         type: "star-o",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118
+          lineNumber: 136
         }
       });
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 120
+          lineNumber: 138
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Col"], {
         lg: {
@@ -300,11 +337,11 @@ function (_Component2) {
         },
         className: "gutter-row",
         onClick: function onClick() {
-          return _this4.setVisible(true);
+          return _this5.setVisible(true);
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 121
+          lineNumber: 139
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Card"], {
         title: title,
@@ -316,49 +353,49 @@ function (_Component2) {
           onClick: this.favHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 122
+            lineNumber: 140
           }
         }, " ", favourite ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], {
           type: "star",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 122
+            lineNumber: 140
           }
         }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], {
           type: "star-o",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 122
+            lineNumber: 140
           }
         })),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 122
+          lineNumber: 140
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
         className: "proba",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 123
+          lineNumber: 141
         }
       }, content))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Modal"], {
         title: title,
         wrapClassName: "vertical-center-modal",
         visible: this.state.modalVisible,
         onOk: function onOk() {
-          return _this4.setVisible(false);
+          return _this5.setVisible(false);
         },
         onCancel: function onCancel() {
-          return _this4.setVisible(false);
+          return _this5.setVisible(false);
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 126
+          lineNumber: 144
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133
+          lineNumber: 151
         }
       }, content)));
     }
