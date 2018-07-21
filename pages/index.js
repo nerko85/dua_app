@@ -8,6 +8,7 @@ export default class Index extends Component {
         
     return  <Master>
                 <DuaWrapper/>
+                <p>test</p>
             </Master>
     }
 }
