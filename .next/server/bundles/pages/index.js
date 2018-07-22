@@ -91,6 +91,8 @@ module.exports =
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DuaContainer_css__ = __webpack_require__("./components/Container/DuaContainer.css");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DuaContainer_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__DuaContainer_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Forms_SearchComponent__ = __webpack_require__("./components/Forms/SearchComponent.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Duas_Duas__ = __webpack_require__("./components/Duas/Duas.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__HijriCalendar_HijriCalendar__ = __webpack_require__("./components/HijriCalendar/HijriCalendar.js");
 var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\Container\\DuaContainer.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -109,6 +111,8 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 
  // import css from'./DuaContainer.css'
+
+
 
 
 
@@ -158,8 +162,7 @@ function (_Component) {
         // chain: undefined
 
       }],
-      results: [],
-      prayers: []
+      results: []
     };
     _this.changeFav = _this.changeFav.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
@@ -201,58 +204,36 @@ function (_Component) {
           results: []
         });
       }
-    }
-  }, {
-    key: "fetch",
-    value: function (_fetch) {
-      function fetch() {
-        return _fetch.apply(this, arguments);
-      }
+    } // fetch(){
+    //     const now = new Date();
+    //     const year = now.getFullYear();
+    //     const month = now.getMonth() + 2;
+    //     console.log(month)
+    //     const endpoint = `http://api.aladhan.com/v1/calendar?latitude=44.206583&longitude=17.906376&method=2&month=${month}&year=${year}`;
+    //     fetch(endpoint).then(blob => blob.json()).then(resp => this.setState({
+    //         prayers: resp.data
+    //     }))
+    // }
+    // componentDidMount(){
+    //     this.fetch()
+    // }
 
-      fetch.toString = function () {
-        return _fetch.toString();
-      };
-
-      return fetch;
-    }(function () {
-      var _this2 = this;
-
-      var now = new Date();
-      var year = now.getFullYear();
-      var month = now.getMonth() + 2;
-      console.log(month);
-      var endpoint = "http://api.aladhan.com/v1/calendar?latitude=44.206583&longitude=17.906376&method=2&month=".concat(month, "&year=").concat(year);
-      fetch(endpoint).then(function (blob) {
-        return blob.json();
-      }).then(function (resp) {
-        return _this2.setState({
-          prayers: resp.data
-        });
-      });
-    })
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.fetch();
-    }
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this2 = this;
 
       var _state = this.state,
           duas = _state.duas,
-          results = _state.results,
-          prayers = _state.prayers;
-      console.log(prayers);
+          results = _state.results;
       var test = results === undefined || results.length == 0 ? duas : results;
       var novo = test.map(function (item, index) {
-        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Duas, {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Duas_Duas__["a" /* default */], {
           key: index,
           title: item.title,
           content: item.body,
           favourite: item.favourite,
-          changeFav: _this3.changeFav,
+          changeFav: _this2.changeFav,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 112
@@ -264,18 +245,23 @@ function (_Component) {
           fileName: _jsxFileName,
           lineNumber: 116
         }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Forms_SearchComponent__["a" /* default */], {
-        handleChange: this.handleChange,
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__HijriCalendar_HijriCalendar__["a" /* default */], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 117
+        }
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Forms_SearchComponent__["a" /* default */], {
+        handleChange: this.handleChange,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 118
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Row"], {
         type: "flex",
         justify: "space-between",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118
+          lineNumber: 119
         }
       }, novo));
     }
@@ -286,28 +272,57 @@ function (_Component) {
 
 
 
+/***/ }),
+
+/***/ "./components/Duas/Duas.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd__ = __webpack_require__("antd");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd__);
+var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\Duas\\Duas.js";
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+
+
+
 var Duas =
 /*#__PURE__*/
-function (_Component2) {
-  _inherits(Duas, _Component2);
+function (_Component) {
+  _inherits(Duas, _Component);
 
   function Duas(props) {
-    var _this4;
+    var _this;
 
     _classCallCheck(this, Duas);
 
-    _this4 = _possibleConstructorReturn(this, (Duas.__proto__ || Object.getPrototypeOf(Duas)).call(this, props));
-    _this4.favHandler = _this4.favHandler.bind(_assertThisInitialized(_this4));
-    _this4.state = {
+    _this = _possibleConstructorReturn(this, (Duas.__proto__ || Object.getPrototypeOf(Duas)).call(this, props));
+    _this.favHandler = _this.favHandler.bind(_assertThisInitialized(_this));
+    _this.state = {
       modalVisible: false
     };
-    return _this4;
+    return _this;
   }
 
   _createClass(Duas, [{
     key: "render",
     value: function render() {
-      var _this5 = this;
+      var _this2 = this;
 
       var _props = this.props,
           title = _props.title,
@@ -317,19 +332,19 @@ function (_Component2) {
         type: "star",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 136
+          lineNumber: 14
         }
       }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], {
         type: "star-o",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 136
+          lineNumber: 14
         }
       });
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 138
+          lineNumber: 16
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Col"], {
         lg: {
@@ -337,11 +352,11 @@ function (_Component2) {
         },
         className: "gutter-row",
         onClick: function onClick() {
-          return _this5.setVisible(true);
+          return _this2.setVisible(true);
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 139
+          lineNumber: 17
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Card"], {
         title: title,
@@ -353,49 +368,49 @@ function (_Component2) {
           onClick: this.favHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 140
+            lineNumber: 18
           }
         }, " ", favourite ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], {
           type: "star",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 140
+            lineNumber: 18
           }
         }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], {
           type: "star-o",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 140
+            lineNumber: 18
           }
         })),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140
+          lineNumber: 18
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
         className: "proba",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 141
+          lineNumber: 19
         }
       }, content))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Modal"], {
         title: title,
         wrapClassName: "vertical-center-modal",
         visible: this.state.modalVisible,
         onOk: function onOk() {
-          return _this5.setVisible(false);
+          return _this2.setVisible(false);
         },
         onCancel: function onCancel() {
-          return _this5.setVisible(false);
+          return _this2.setVisible(false);
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 144
+          lineNumber: 22
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 151
+          lineNumber: 29
         }
       }, content)));
     }
@@ -417,6 +432,8 @@ function (_Component2) {
 
   return Duas;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (Duas);
 
 /***/ }),
 
@@ -504,6 +521,189 @@ function (_Component) {
 
 /***/ }),
 
+/***/ "./components/HijriCalendar/HijriCalendar.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HijriCalendar; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd__ = __webpack_require__("antd");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd__);
+var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\HijriCalendar\\HijriCalendar.js";
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+
+
+
+var HijriCalendar =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(HijriCalendar, _Component);
+
+  function HijriCalendar(props) {
+    var _this;
+
+    _classCallCheck(this, HijriCalendar);
+
+    _this = _possibleConstructorReturn(this, (HijriCalendar.__proto__ || Object.getPrototypeOf(HijriCalendar)).call(this, props));
+    _this.state = {
+      prayers: []
+    };
+    _this.dateCellRender = _this.dateCellRender.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(HijriCalendar, [{
+    key: "fetch",
+    value: function (_fetch) {
+      function fetch() {
+        return _fetch.apply(this, arguments);
+      }
+
+      fetch.toString = function () {
+        return _fetch.toString();
+      };
+
+      return fetch;
+    }(function () {
+      var _this2 = this;
+
+      var now = new Date();
+      var year = now.getFullYear();
+      var month = now.getMonth() + 2;
+      console.log(month);
+      var endpoint = "http://api.aladhan.com/v1/calendar?latitude=44.206583&longitude=17.906376&method=2&month=".concat(month, "&year=").concat(year);
+      fetch(endpoint).then(function (blob) {
+        return blob.json();
+      }).then(function (resp) {
+        return _this2.setState({
+          prayers: resp.data
+        });
+      });
+    })
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.fetch();
+    }
+  }, {
+    key: "getListData",
+    value: function getListData(value) {
+      var listData;
+
+      switch (value.date()) {
+        case 8:
+          listData = [{
+            type: 'warning',
+            content: 'This is warning event.'
+          }, {
+            type: 'success',
+            content: 'This is usual event.'
+          }];
+          break;
+
+        default:
+      }
+
+      return listData || [];
+    }
+  }, {
+    key: "dateCellRender",
+    value: function dateCellRender(value) {
+      var listData = this.getListData(value);
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("ul", {
+        className: "events",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 47
+        }
+      }, listData.map(function (item) {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
+          key: item.content,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 50
+          }
+        }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Badge"], {
+          status: item.type,
+          text: item.content,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 51
+          }
+        }));
+      }));
+    }
+  }, {
+    key: "getMonthData",
+    value: function getMonthData(value) {
+      if (value.month() === 8) {
+        return 1394;
+      }
+    }
+  }, {
+    key: "monthCellRender",
+    value: function monthCellRender(value) {
+      var num = getMonthData(value);
+      return num ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "notes-month",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 68
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("section", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 69
+        }
+      }, num), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 70
+        }
+      }, "Backlog number")) : null;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      console.log(this.state.prayers);
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 78
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Calendar"], {
+        dateCellRender: this.dateCellRender,
+        monthCellRender: this.monthCellRender,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 79
+        }
+      }));
+    }
+  }]);
+
+  return HijriCalendar;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+
+
+/***/ }),
+
 /***/ "./components/Layout/Header/Navigation.css":
 /***/ (function(module, exports) {
 
@@ -543,9 +743,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 
 
-var Header = __WEBPACK_IMPORTED_MODULE_2_antd__["Layout"];
-var SubMenu = __WEBPACK_IMPORTED_MODULE_2_antd__["Menu"].SubMenu;
-var MenuItemGroup = __WEBPACK_IMPORTED_MODULE_2_antd__["Menu"].ItemGroup;
 
 var Navigation =
 /*#__PURE__*/
@@ -593,88 +790,71 @@ function (_React$Component) {
         mode: "horizontal",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 20
         }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        style: {
-          display: "inline-block",
-          float: "left"
-        },
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_antd__["Menu"].Item, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_antd__["Icon"], {
-        className: "trigger",
-        type: this.state.collapsed ? 'menu-unfold' : 'menu-fold',
-        onClick: this.toggle,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 30
-        }
-      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_antd__["Menu"].Item, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 32
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
         href: "/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 33
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 33
         }
       }, "Home"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_antd__["Menu"].Item, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 35
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
         href: "/about",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 36
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 36
         }
       }, "About"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_antd__["Menu"].Item, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 38
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
         href: "/contact",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 39
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 39
         }
       }, "Contact"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_antd__["Menu"].Item, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 41
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
         href: "/login",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 42
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 42
         }
       }, "Log in"))));
     }
@@ -759,14 +939,16 @@ var Master = function Master(props) {
       lineNumber: 17
     }
   })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_antd__["Layout"], {
-    style: {
-      height: "100vh"
-    },
     __source: {
       fileName: _jsxFileName,
       lineNumber: 20
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Sidebar_Sidebar__["a" /* default */], {
+    style: {
+      height: "100vh",
+      position: 'fixed',
+      top: '0'
+    },
     __source: {
       fileName: _jsxFileName,
       lineNumber: 21
@@ -803,7 +985,7 @@ var Master = function Master(props) {
   }, "Ant Design \xA92016 Created by Ant UED"))));
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (Master);
+/* harmony default export */ __webpack_exports__["a"] = (Master); //style={{ width: "100vw", position:'fixed', top:'0', margin:"0 0 0 200px"}}
 
 /***/ }),
 

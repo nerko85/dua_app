@@ -3,10 +3,6 @@ import Link from 'next/link';
 import { Menu, Icon, Layout } from 'antd';
 import './Navigation.css';
 
-const Header = Layout;
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
-
 class Navigation extends React.Component {
   state = {
     current: 'mail',
@@ -26,13 +22,13 @@ class Navigation extends React.Component {
           selectedKeys={[this.state.current]}
           mode="horizontal"
         >
-          <div style={{display:"inline-block", float:"left"}}>
+          {/* <div style={{display:"inline-block", float:"left"}}>
           <Icon
             className="trigger"
             type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
             onClick={this.toggle}
           />
-          </div>
+          </div> */}
           <Menu.Item>
               <Link href="/"><a>Home</a></Link>
           </Menu.Item>
