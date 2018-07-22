@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { Card, Col, Row, Icon, Modal } from 'antd'
+import { Row } from 'antd'
 // import css from'./DuaContainer.css'
 import './DuaContainer.css';
 import SearchComponent from '../Forms/SearchComponent';
+import Duas from '../Duas/Duas'
+import HijriCalendar from '../HijriCalendar/HijriCalendar';
 
 export default class DuaWrapper extends Component {
     constructor(props){
@@ -84,10 +86,26 @@ export default class DuaWrapper extends Component {
             })
         }
     }
+    
+    // fetch(){
+    //     const now = new Date();
+    //     const year = now.getFullYear();
+    //     const month = now.getMonth() + 2;
+
+    //     console.log(month)
+    //     const endpoint = `http://api.aladhan.com/v1/calendar?latitude=44.206583&longitude=17.906376&method=2&month=${month}&year=${year}`;
+
+    //     fetch(endpoint).then(blob => blob.json()).then(resp => this.setState({
+    //         prayers: resp.data
+    //     }))
+    // }
+
+    // componentDidMount(){
+    //     this.fetch()
+    // }
 
     render() {
-        const results = this.state.results;
-        const duas = this.state.duas;
+        const { duas, results } = this.state;
         const test = (results === undefined || results.length == 0)? duas : results;
         const novo = test.map((item,index)=>{
             return (
@@ -96,6 +114,7 @@ export default class DuaWrapper extends Component {
         })
         return (
             <React.Fragment>
+                <HijriCalendar/>
                 <SearchComponent handleChange={this.handleChange}/>
                 <Row type="flex" justify="space-between">
                     {novo}
@@ -105,45 +124,3 @@ export default class DuaWrapper extends Component {
     }
 }
 
-class Duas extends Component {
-    constructor(props){
-        super(props);
-        this.favHandler = this.favHandler.bind(this);
-        this.state = {
-            modalVisible: false,
-          }
-    }
-    render() {
-        const { title, content, favourite } = this.props;
-        const proba = favourite ? <Icon type="star" /> : <Icon type="star-o" />;
-        return (
-            <div>
-                <Col lg={{ span: 6}} className="gutter-row" onClick={() => this.setVisible(true)} >
-                    <Card title={title} style={{ width: 300 }} extra={<a href="#" onClick={this.favHandler}> {favourite ? <Icon type="star" /> : <Icon type="star-o" />}</a>} >
-                        <p className='proba'>{content}</p>
-                    </Card>
-                </Col>
-                <Modal
-                    title={title}
-                    wrapClassName="vertical-center-modal"
-                    visible={this.state.modalVisible}
-                    onOk={() => this.setVisible(false)}
-                    onCancel={() => this.setVisible(false)}
-                    >
-                    <p>{content}</p>
-                </Modal>  
-            </div>
-        )
-    }
-
-    favHandler(e){
-        e.preventDefault();
-        const { changeFav } = this.props;
-        changeFav(this.props)
-        // console.log(this)
-    }
-
-    setVisible(modalVisible) {
-        this.setState({ modalVisible });
-      }
-}
