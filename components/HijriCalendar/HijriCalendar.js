@@ -5,7 +5,7 @@ export default class HijriCalendar extends Component {
     constructor(props){
         super(props);
         this.state = {
-            prayers: []
+            data: []
         }
 
         this.dateCellRender = this.dateCellRender.bind(this)
@@ -20,7 +20,7 @@ export default class HijriCalendar extends Component {
         const endpoint = `http://api.aladhan.com/v1/calendar?latitude=44.206583&longitude=17.906376&method=2&month=${month}&year=${year}`;
 
         fetch(endpoint).then(blob => blob.json()).then(resp => this.setState({
-            prayers: resp.data
+            data: resp.data
         }))
     }
 
