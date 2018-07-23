@@ -93,7 +93,7 @@ module.exports =
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Forms_SearchComponent__ = __webpack_require__("./components/Forms/SearchComponent.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Duas_Duas__ = __webpack_require__("./components/Duas/Duas.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__HijriCalendar_HijriCalendar__ = __webpack_require__("./components/HijriCalendar/HijriCalendar.js");
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\Container\\DuaContainer.js";
+var _jsxFileName = "/Users/Nermin/Desktop/duaApp/components/Container/DuaContainer.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -282,7 +282,7 @@ function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd__ = __webpack_require__("antd");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\Duas\\Duas.js";
+var _jsxFileName = "/Users/Nermin/Desktop/duaApp/components/Duas/Duas.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -445,7 +445,7 @@ function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd__ = __webpack_require__("antd");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\Forms\\SearchComponent.js";
+var _jsxFileName = "/Users/Nermin/Desktop/duaApp/components/Forms/SearchComponent.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -530,7 +530,7 @@ function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd__ = __webpack_require__("antd");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\HijriCalendar\\HijriCalendar.js";
+var _jsxFileName = "/Users/Nermin/Desktop/duaApp/components/HijriCalendar/HijriCalendar.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -561,7 +561,7 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, (HijriCalendar.__proto__ || Object.getPrototypeOf(HijriCalendar)).call(this, props));
     _this.state = {
-      prayers: []
+      data: []
     };
     _this.dateCellRender = _this.dateCellRender.bind(_assertThisInitialized(_this));
     return _this;
@@ -591,7 +591,7 @@ function (_Component) {
         return blob.json();
       }).then(function (resp) {
         return _this2.setState({
-          prayers: resp.data
+          data: resp.data
         });
       });
     })
@@ -723,7 +723,7 @@ function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_antd__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Navigation_css__ = __webpack_require__("./components/Layout/Header/Navigation.css");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Navigation_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__Navigation_css__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\Layout\\Header\\Navigation.js";
+var _jsxFileName = "/Users/Nermin/Desktop/duaApp/components/Layout/Header/Navigation.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -888,7 +888,7 @@ function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Master_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__Master_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_antd__ = __webpack_require__("antd");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_antd__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\Layout\\Master.js";
+var _jsxFileName = "/Users/Nermin/Desktop/duaApp/components/Layout/Master.js";
 
 
 
@@ -1006,7 +1006,7 @@ var Master = function Master(props) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Sidebar_css__ = __webpack_require__("./components/Layout/Sidebar/Sidebar.css");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Sidebar_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Sidebar_css__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\Layout\\Sidebar\\Sidebar.js";
+var _jsxFileName = "/Users/Nermin/Desktop/duaApp/components/Layout/Sidebar/Sidebar.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -1182,7 +1182,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Container_DuaContainer__ = __webpack_require__("./components/Container/DuaContainer.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_antd__ = __webpack_require__("antd");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_antd__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\pages\\index.js";
+var _jsxFileName = "/Users/Nermin/Desktop/duaApp/pages/index.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
