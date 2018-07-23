@@ -86,23 +86,6 @@ export default class DuaWrapper extends Component {
             })
         }
     }
-    
-    // fetch(){
-    //     const now = new Date();
-    //     const year = now.getFullYear();
-    //     const month = now.getMonth() + 2;
-
-    //     console.log(month)
-    //     const endpoint = `http://api.aladhan.com/v1/calendar?latitude=44.206583&longitude=17.906376&method=2&month=${month}&year=${year}`;
-
-    //     fetch(endpoint).then(blob => blob.json()).then(resp => this.setState({
-    //         prayers: resp.data
-    //     }))
-    // }
-
-    // componentDidMount(){
-    //     this.fetch()
-    // }
 
     render() {
         const { duas, results } = this.state;
