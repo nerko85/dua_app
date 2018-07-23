@@ -41,6 +41,9 @@ class Navigation extends React.Component {
           <Menu.Item>
               <Link href="/login"><a>Log in</a></Link>
           </Menu.Item>
+          <Menu.Item>
+              <Link href="/times"><a>Prayers</a></Link>
+          </Menu.Item>
         </Menu>
     );
   }

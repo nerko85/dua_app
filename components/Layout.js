@@ -22,6 +22,7 @@ const Layout = (props) => (
                 <SearchComponent />
             </Col>
         </Row>
+        <br/><br/>
         <Row gutter={16} type="flex" justify="center">
             {props.children}
         </Row>

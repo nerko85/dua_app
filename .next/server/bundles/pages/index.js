@@ -204,20 +204,7 @@ function (_Component) {
           results: []
         });
       }
-    } // fetch(){
-    //     const now = new Date();
-    //     const year = now.getFullYear();
-    //     const month = now.getMonth() + 2;
-    //     console.log(month)
-    //     const endpoint = `http://api.aladhan.com/v1/calendar?latitude=44.206583&longitude=17.906376&method=2&month=${month}&year=${year}`;
-    //     fetch(endpoint).then(blob => blob.json()).then(resp => this.setState({
-    //         prayers: resp.data
-    //     }))
-    // }
-    // componentDidMount(){
-    //     this.fetch()
-    // }
-
+    }
   }, {
     key: "render",
     value: function render() {
@@ -236,32 +223,32 @@ function (_Component) {
           changeFav: _this2.changeFav,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 112
+            lineNumber: 95
           }
         });
       });
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Fragment, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116
+          lineNumber: 99
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__HijriCalendar_HijriCalendar__["a" /* default */], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 117
+          lineNumber: 100
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Forms_SearchComponent__["a" /* default */], {
         handleChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118
+          lineNumber: 101
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Row"], {
         type: "flex",
         justify: "space-between",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 119
+          lineNumber: 102
         }
       }, novo));
     }
@@ -856,7 +843,23 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 42
         }
-      }, "Log in"))));
+      }, "Log in"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_antd__["Menu"].Item, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 44
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
+        href: "/times",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45
+        }
+      }, "Prayers"))));
     }
   }]);
 
@@ -945,7 +948,7 @@ var Master = function Master(props) {
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Sidebar_Sidebar__["a" /* default */], {
     style: {
-      height: "100vh",
+      height: "100%",
       position: 'fixed',
       top: '0'
     },
@@ -954,6 +957,12 @@ var Master = function Master(props) {
       lineNumber: 21
     }
   }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_antd__["Layout"], {
+    style: {
+      maxWidth: 'calc(100vw - 200px)',
+      minHeight: 'calc(100vh - 142px)',
+      marginLeft: '200px',
+      overflowY: 'scroll'
+    },
     __source: {
       fileName: _jsxFileName,
       lineNumber: 22
@@ -967,8 +976,7 @@ var Master = function Master(props) {
     style: {
       margin: '24px 16px',
       padding: 24,
-      background: '#fff',
-      minHeight: 280
+      background: '#fff'
     },
     __source: {
       fileName: _jsxFileName,

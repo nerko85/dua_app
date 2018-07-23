@@ -19,7 +19,7 @@ class  Sidebar extends Component {
             <Sider
                 trigger={null}
                 collapsible
-                collapsed={this.state.collapsed} >
+                collapsed={this.state.collapsed}>
                 <div className="logo" />
                 <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
                     <Menu.Item key="1">

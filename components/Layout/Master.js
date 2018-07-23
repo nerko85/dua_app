@@ -18,10 +18,10 @@ const Master = props => (
         </Head>
         
         <Layout  >
-            <Sidebar style={{ height: "100vh", position:'fixed', top:'0'}} />
-            <Layout>
+            <Sidebar style={{ height: "100%", position:'fixed', top:'0'}} />
+            <Layout style={{maxWidth: 'calc(100vw - 200px)', minHeight: 'calc(100vh - 142px)', marginLeft: '200px', overflowY: 'scroll'}}>
                 <Navigation/>
-                <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
+                <Content style={{ margin: '24px 16px', padding: 24, background: '#fff'}}>
                     {props.children}
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>
