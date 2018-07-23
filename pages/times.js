@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Layout from '../components/Layout';
-import { Table, Icon, Switch, Radio, Form, Divider, Card  } from 'antd';
+import { Table, Icon, Switch, Radio, Form, Divider, Card, Button } from 'antd';
 
 export default class Contact extends Component {
     state = {
@@ -51,6 +51,7 @@ export default class Contact extends Component {
             this.state.data.push({
                 name: prayer.name,
                 time: prayer.age,
+                button: <Button>{'Test'}</Button>
             })
         });
     }
@@ -58,7 +59,14 @@ export default class Contact extends Component {
     render(){
         const FormItem = Form.Item;
         const data = this.state.data;
-        const columns = [{
+        const columns = [
+            {
+                title:'',
+                dataIndex: 'button',
+                dataIndex: 'button',
+                key: 'button',
+            },
+            {
             title: 'Name',
             dataIndex: 'name',
             key: 'name',

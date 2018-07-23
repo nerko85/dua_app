@@ -8,10 +8,6 @@
   
 .trigger:hover {
     color: #1890ff;
-  }.logo {
-    height: 32px;
-    background: rgba(255,255,255,.2);
-    margin: 16px;
   }/*!
  * 
  * antd v3.7.0
@@ -21513,47 +21509,4 @@ li.ant-tree-treenode-disabled > .ant-tree-node-content-wrapper:hover {
 }
 
 /*# sourceMappingURL=antd.css.map*/
-.test {
-    margin: 20px;
-}
-.gutter-row {
-    padding: 20px 0;
-}
-.ant-card {
-    cursor: pointer;
-}
-
-.ant-card:hover .ant-card-head {
-    background-color: aliceblue;
-}
-
-.ant-card:hover  {
-    border-color: #40a9ff;
-    outline: 0;
-    -webkit-box-shadow: 0 0 0 2px rgba(88, 174, 255, 0.2);
-    box-shadow: 0 0 0 2px rgba(88, 174, 255, 0.2);
-    border-right-width: 1px !important;
-}
-
-.vertical-center-modal {
-    text-align: center;
-    white-space: nowrap;
-  }
-  
-  .vertical-center-modal:before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    width: 0;
-  }
-  
-  .vertical-center-modal .ant-modal {
-    display: inline-block;
-    vertical-align: middle;
-    top: 0;
-    text-align: left;
-  }
-
-
 /*# sourceMappingURL=style.css.map*/
