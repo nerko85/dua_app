@@ -17,8 +17,8 @@ const Master = props => (
             <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/antd/3.7.0/antd.css'/>
         </Head>
         
-        <Layout style={{ height: "100vh" }} >
-            <Sidebar />
+        <Layout  >
+            <Sidebar style={{ height: "100vh", position:'fixed', top:'0'}} />
             <Layout>
                 <Navigation/>
                 <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
@@ -33,3 +33,5 @@ const Master = props => (
 )
 
 export default Master;
+
+//style={{ width: "100vw", position:'fixed', top:'0', margin:"0 0 0 200px"}}
