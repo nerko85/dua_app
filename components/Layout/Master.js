@@ -5,7 +5,7 @@ import Sidebar from './Sidebar/Sidebar';
 import './Master.css';
 
 import { Layout } from 'antd';
-import { Row, Col, Input } from 'antd';
+// import { Row, Col, Input } from 'antd';
 const { Header, Content, Footer } = Layout;
 
 const Master = props => (
@@ -18,7 +18,7 @@ const Master = props => (
         </Head>
         
         <Layout  >
-            <Sidebar style={{ height: "100%", position:'fixed', top:'0'}} />
+            <Sidebar style={{ height: "100%", position:'fixed', top:'0', background:'red'}} />
             <Layout style={{maxWidth: 'calc(100vw - 200px)', minHeight: 'calc(100vh - 142px)', marginLeft: '200px', overflowY: 'scroll'}}>
                 <Navigation/>
                 <Content style={{ margin: '24px 16px', padding: 24, background: '#fff'}}>

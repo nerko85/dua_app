@@ -12,7 +12,13 @@
     height: 32px;
     background: rgba(255,255,255,.2);
     margin: 16px;
-  }/*!
+  }
+
+.ant-layout-sider {
+  position:fixed !important;
+  background-color: red;
+  height: 100%;
+}/*!
  * 
  * antd v3.7.0
  * 
@@ -21512,8 +21518,7 @@ li.ant-tree-treenode-disabled > .ant-tree-node-content-wrapper:hover {
   }
 }
 
-/*# sourceMappingURL=antd.css.map*/
-.test {
+/*# sourceMappingURL=antd.css.map*/.test {
     margin: 20px;
 }
 .gutter-row {
