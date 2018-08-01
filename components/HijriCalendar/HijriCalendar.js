@@ -1,84 +1,119 @@
-import React, { Component } from 'react'
-import { Calendar, Badge } from 'antd';
+import React, { Component } from "react";
+import { Card, Select, Button, Icon } from "antd";
+
+const Option = Select.Option;
 
 export default class HijriCalendar extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            data: []
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      year: new Date().getFullYear(),
+      month: new Date().getMonth() + 1,
+      months: [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
+      day: new Date().getUTCDay(),
+      data: []
+    };
 
-        this.dateCellRender = this.dateCellRender.bind(this)
-    }
+    this.handleAddYear = this.handleAddYear.bind(this);
+    this.handleReduceYear = this.handleReduceYear.bind(this);
+    this.handleChangeMonth = this.handleChangeMonth.bind(this);
+  }
 
-    fetch(){
-        const now = new Date();
-        const year = now.getFullYear();
-        const month = now.getMonth() + 2;
+  async handleAddYear() {
+    await this.setState(prevState => ({ year: prevState.year + 1 }));
+    this.fetch();
+  }
 
-        console.log(month)
-        const endpoint = `http://api.aladhan.com/v1/calendar?latitude=44.206583&longitude=17.906376&method=2&month=${month}&year=${year}`;
+  async handleReduceYear() {
+    await this.setState(prevState => ({ year: prevState.year - 1 }));
+    this.fetch();
+  }
 
-        fetch(endpoint).then(blob => blob.json()).then(resp => this.setState({
-            data: resp.data
-        }))
-    }
+  async handleChangeMonth(value) {
+    const { months } = this.state;
+    await this.setState({ month: months.indexOf(value) + 1 });
+    this.fetch();
+  }
 
-    componentDidMount(){
-        this.fetch()
-    }
+  fetch() {
+    const { year, month } = this.state;
+    const endpoint = `http://api.aladhan.com/v1/calendar?latitude=44.206583&longitude=17.906376&method=2&month=${month}&year=${year}`;
 
-    getListData(value) {
-        let listData;
-        switch (value.date()) {
-          case 8:
-            listData = [
-              { type: 'warning', content: 'This is warning event.' },
-              { type: 'success', content: 'This is usual event.' },
-            ]; break;
-          default:
-        }
-        return listData || [];
-      }
-      
-      dateCellRender(value) {
-        const listData = this.getListData(value);
-        return (
-          <ul className="events">
-            {
-              listData.map(item => (
-                <li key={item.content}>
-                  <Badge status={item.type} text={item.content} />
-                </li>
-              ))
-            }
-          </ul>
-        );
-      }
-      
-      getMonthData(value) {
-        if (value.month() === 8) {
-          return 1394;
-        }
-      }
-      
-      monthCellRender(value) {
-        const num = getMonthData(value);
-        return num ? (
-          <div className="notes-month">
-            <section>{num}</section>
-            <span>Backlog number</span>
-          </div>
-        ) : null;
-      }
+    fetch(endpoint)
+      .then(blob => blob.json())
+      .then(resp =>
+        this.setState({
+          data: resp.data
+        })
+      );
+  }
 
-    render() {
-        console.log(this.state.prayers)
-        return (
-            <div>
-                 <Calendar dateCellRender={this.dateCellRender} monthCellRender={this.monthCellRender} />
-            </div>
-        )
-    }
+  componentDidMount() {
+    this.fetch();
+  }
+
+  render() {
+    const { year, months, month, data } = this.state;
+    const gridStyle = {
+      width: "25%",
+      height: "140px",
+      textAlign: "center",
+      isActive: "background-color"
+    };
+    return (
+      <div>
+        <Select
+          defaultValue={months[month - 1]}
+          style={{ width: 120 }}
+          onChange={this.handleChangeMonth}
+        >
+          {months.map(month => (
+            <Option key={month} value={month}>
+              {month}
+            </Option>
+          ))}
+        </Select>
+
+        <Button.Group>
+          <Button type="primary" onClick={this.handleReduceYear}>
+            <Icon type="left" />Previous Year
+          </Button>
+          <Button>{year}</Button>
+          <Button type="primary" onClick={this.handleAddYear}>
+            Next Year<Icon type="right" />
+          </Button>
+        </Button.Group>
+        <br />
+        <br />
+        <Card title="Calendar ">
+          {data.map(info => (
+            <Card.Grid style={gridStyle}>
+              {info.date.gregorian.day}. {info.date.gregorian.month.en}, {info.date.gregorian.weekday.en}
+              <br />
+              Hijri Year: {info.date.hijri.year}
+              <br/>
+              {info.date.hijri.day}. {info.date.hijri.month.en} / {info.date.hijri.month.ar}
+              <br/>
+              {info.date.hijri.weekday.en} / {info.date.hijri.weekday.ar}
+              <br/>
+              {info.date.hijri.holidays}
+            </Card.Grid>
+          ))}
+        </Card>
+      </div>
+    );
+  }
 }
-

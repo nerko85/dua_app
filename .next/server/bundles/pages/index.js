@@ -93,7 +93,7 @@ module.exports =
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Forms_SearchComponent__ = __webpack_require__("./components/Forms/SearchComponent.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Duas_Duas__ = __webpack_require__("./components/Duas/Duas.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__HijriCalendar_HijriCalendar__ = __webpack_require__("./components/HijriCalendar/HijriCalendar.js");
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\Container\\DuaContainer.js";
+var _jsxFileName = "/home/abdurahman/Desktop/dua_app/components/Container/DuaContainer.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -282,7 +282,7 @@ function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd__ = __webpack_require__("antd");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\Duas\\Duas.js";
+var _jsxFileName = "/home/abdurahman/Desktop/dua_app/components/Duas/Duas.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -445,7 +445,7 @@ function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd__ = __webpack_require__("antd");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\Forms\\SearchComponent.js";
+var _jsxFileName = "/home/abdurahman/Desktop/dua_app/components/Forms/SearchComponent.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -526,13 +526,18 @@ function (_Component) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HijriCalendar; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd__ = __webpack_require__("antd");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\HijriCalendar\\HijriCalendar.js";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("@babel/runtime/regenerator");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_antd__ = __webpack_require__("antd");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_antd__);
+
+var _jsxFileName = "/home/abdurahman/Desktop/dua_app/components/HijriCalendar/HijriCalendar.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } } function _next(value) { step("next", value); } function _throw(err) { step("throw", err); } _next(); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -548,6 +553,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 
 
+var Option = __WEBPACK_IMPORTED_MODULE_2_antd__["Select"].Option;
 
 var HijriCalendar =
 /*#__PURE__*/
@@ -561,13 +567,115 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, (HijriCalendar.__proto__ || Object.getPrototypeOf(HijriCalendar)).call(this, props));
     _this.state = {
-      prayers: []
+      year: new Date().getFullYear(),
+      month: new Date().getMonth() + 1,
+      months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+      day: new Date().getUTCDay(),
+      data: []
     };
-    _this.dateCellRender = _this.dateCellRender.bind(_assertThisInitialized(_this));
+    _this.handleAddYear = _this.handleAddYear.bind(_assertThisInitialized(_this));
+    _this.handleReduceYear = _this.handleReduceYear.bind(_assertThisInitialized(_this));
+    _this.handleChangeMonth = _this.handleChangeMonth.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(HijriCalendar, [{
+    key: "handleAddYear",
+    value: function () {
+      var _handleAddYear = _asyncToGenerator(
+      /*#__PURE__*/
+      __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee() {
+        return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return this.setState(function (prevState) {
+                  return {
+                    year: prevState.year + 1
+                  };
+                });
+
+              case 2:
+                this.fetch();
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      return function handleAddYear() {
+        return _handleAddYear.apply(this, arguments);
+      };
+    }()
+  }, {
+    key: "handleReduceYear",
+    value: function () {
+      var _handleReduceYear = _asyncToGenerator(
+      /*#__PURE__*/
+      __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee2() {
+        return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return this.setState(function (prevState) {
+                  return {
+                    year: prevState.year - 1
+                  };
+                });
+
+              case 2:
+                this.fetch();
+
+              case 3:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      return function handleReduceYear() {
+        return _handleReduceYear.apply(this, arguments);
+      };
+    }()
+  }, {
+    key: "handleChangeMonth",
+    value: function () {
+      var _handleChangeMonth = _asyncToGenerator(
+      /*#__PURE__*/
+      __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee3(value) {
+        var months;
+        return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                months = this.state.months;
+                _context3.next = 3;
+                return this.setState({
+                  month: months.indexOf(value) + 1
+                });
+
+              case 3:
+                this.fetch();
+
+              case 4:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, this);
+      }));
+
+      return function handleChangeMonth(_x) {
+        return _handleChangeMonth.apply(this, arguments);
+      };
+    }()
+  }, {
     key: "fetch",
     value: function (_fetch) {
       function fetch() {
@@ -582,16 +690,15 @@ function (_Component) {
     }(function () {
       var _this2 = this;
 
-      var now = new Date();
-      var year = now.getFullYear();
-      var month = now.getMonth() + 2;
-      console.log(month);
+      var _state = this.state,
+          year = _state.year,
+          month = _state.month;
       var endpoint = "http://api.aladhan.com/v1/calendar?latitude=44.206583&longitude=17.906376&method=2&month=".concat(month, "&year=").concat(year);
       fetch(endpoint).then(function (blob) {
         return blob.json();
       }).then(function (resp) {
         return _this2.setState({
-          prayers: resp.data
+          data: resp.data
         });
       });
     })
@@ -601,104 +708,129 @@ function (_Component) {
       this.fetch();
     }
   }, {
-    key: "getListData",
-    value: function getListData(value) {
-      var listData;
-
-      switch (value.date()) {
-        case 8:
-          listData = [{
-            type: 'warning',
-            content: 'This is warning event.'
-          }, {
-            type: 'success',
-            content: 'This is usual event.'
-          }];
-          break;
-
-        default:
-      }
-
-      return listData || [];
-    }
-  }, {
-    key: "dateCellRender",
-    value: function dateCellRender(value) {
-      var listData = this.getListData(value);
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("ul", {
-        className: "events",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 47
-        }
-      }, listData.map(function (item) {
-        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
-          key: item.content,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 50
-          }
-        }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Badge"], {
-          status: item.type,
-          text: item.content,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 51
-          }
-        }));
-      }));
-    }
-  }, {
-    key: "getMonthData",
-    value: function getMonthData(value) {
-      if (value.month() === 8) {
-        return 1394;
-      }
-    }
-  }, {
-    key: "monthCellRender",
-    value: function monthCellRender(value) {
-      var num = getMonthData(value);
-      return num ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        className: "notes-month",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 68
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("section", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 69
-        }
-      }, num), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 70
-        }
-      }, "Backlog number")) : null;
-    }
-  }, {
     key: "render",
     value: function render() {
-      console.log(this.state.prayers);
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+      var _state2 = this.state,
+          year = _state2.year,
+          months = _state2.months,
+          month = _state2.month,
+          data = _state2.data;
+      var gridStyle = {
+        width: "25%",
+        height: "140px",
+        textAlign: "center",
+        isActive: "background-color"
+      };
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 77
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_antd__["Select"], {
+        defaultValue: months[month - 1],
+        style: {
+          width: 120
+        },
+        onChange: this.handleChangeMonth,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 78
         }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Calendar"], {
-        dateCellRender: this.dateCellRender,
-        monthCellRender: this.monthCellRender,
+      }, months.map(function (month) {
+        return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Option, {
+          key: month,
+          value: month,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 84
+          }
+        }, month);
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_antd__["Button"].Group, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79
+          lineNumber: 90
         }
-      }));
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_antd__["Button"], {
+        type: "primary",
+        onClick: this.handleReduceYear,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 91
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_antd__["Icon"], {
+        type: "left",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 92
+        }
+      }), "Previous Year"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_antd__["Button"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 94
+        }
+      }, year), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_antd__["Button"], {
+        type: "primary",
+        onClick: this.handleAddYear,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 95
+        }
+      }, "Next Year", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_antd__["Icon"], {
+        type: "right",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 96
+        }
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 99
+        }
+      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 100
+        }
+      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_antd__["Card"], {
+        title: "Calendar ",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 101
+        }
+      }, data.map(function (info) {
+        return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_antd__["Card"].Grid, {
+          style: gridStyle,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 103
+          }
+        }, info.date.gregorian.day, ". ", info.date.gregorian.month.en, ", ", info.date.gregorian.weekday.en, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 105
+          }
+        }), "Hijri Year: ", info.date.hijri.year, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 107
+          }
+        }), info.date.hijri.day, ". ", info.date.hijri.month.en, " / ", info.date.hijri.month.ar, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 109
+          }
+        }), info.date.hijri.weekday.en, " / ", info.date.hijri.weekday.ar, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 111
+          }
+        }), info.date.hijri.holidays);
+      })));
     }
   }]);
 
   return HijriCalendar;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
 
 
 
@@ -723,7 +855,7 @@ function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_antd__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Navigation_css__ = __webpack_require__("./components/Layout/Header/Navigation.css");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Navigation_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__Navigation_css__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\Layout\\Header\\Navigation.js";
+var _jsxFileName = "/home/abdurahman/Desktop/dua_app/components/Layout/Header/Navigation.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -888,7 +1020,7 @@ function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Master_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__Master_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_antd__ = __webpack_require__("antd");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_antd__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\Layout\\Master.js";
+var _jsxFileName = "/home/abdurahman/Desktop/dua_app/components/Layout/Master.js";
 
 
 
@@ -1006,7 +1138,7 @@ var Master = function Master(props) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Sidebar_css__ = __webpack_require__("./components/Layout/Sidebar/Sidebar.css");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Sidebar_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Sidebar_css__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\Layout\\Sidebar\\Sidebar.js";
+var _jsxFileName = "/home/abdurahman/Desktop/dua_app/components/Layout/Sidebar/Sidebar.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -1182,7 +1314,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Container_DuaContainer__ = __webpack_require__("./components/Container/DuaContainer.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_antd__ = __webpack_require__("antd");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_antd__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\pages\\index.js";
+var _jsxFileName = "/home/abdurahman/Desktop/dua_app/pages/index.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -1243,6 +1375,13 @@ function (_Component) {
 
 module.exports = __webpack_require__("./pages/index.js");
 
+
+/***/ }),
+
+/***/ "@babel/runtime/regenerator":
+/***/ (function(module, exports) {
+
+module.exports = require("@babel/runtime/regenerator");
 
 /***/ }),
 
