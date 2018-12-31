@@ -67,7 +67,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -76,11 +76,12 @@ module.exports =
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd__ = __webpack_require__("antd");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\Forms\\SearchComponent.js";
+var _jsxFileName = "/home/abdurahman/Desktop/dua_app/components/Forms/SearchComponent.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -105,14 +106,35 @@ var SearchComponent =
 function (_Component) {
   _inherits(SearchComponent, _Component);
 
-  function SearchComponent(props) {
-    var _this;
+  function SearchComponent() {
+    var _ref;
+
+    var _temp, _this;
 
     _classCallCheck(this, SearchComponent);
 
-    _this = _possibleConstructorReturn(this, (SearchComponent.__proto__ || Object.getPrototypeOf(SearchComponent)).call(this, props));
-    _this.onChange = _this.onChange.bind(_assertThisInitialized(_this));
-    return _this;
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_ref = SearchComponent.__proto__ || Object.getPrototypeOf(SearchComponent)).call.apply(_ref, [this].concat(args))), Object.defineProperty(_assertThisInitialized(_this), "onSearch", {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function value(_value) {
+        console.log(_value);
+      }
+    }), Object.defineProperty(_assertThisInitialized(_this), "onChange", {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function value(e) {
+        var handleChange = _this.props.handleChange;
+        e.preventDefault();
+        var value = e.target.value;
+        handleChange(value); // console.log(e.target.value)
+      }
+    }), _temp));
   }
 
   _createClass(SearchComponent, [{
@@ -130,29 +152,16 @@ function (_Component) {
         onChange: this.onChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 12
+          lineNumber: 20
         }
       });
-    }
-  }, {
-    key: "onSearch",
-    value: function onSearch(value) {
-      console.log(value);
-    }
-  }, {
-    key: "onChange",
-    value: function onChange(e) {
-      var handleChange = this.props.handleChange;
-      e.preventDefault();
-      var value = e.target.value;
-      handleChange(value); // console.log(e.target.value)
     }
   }]);
 
   return SearchComponent;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-/* harmony default export */ __webpack_exports__["a"] = (SearchComponent);
+
 
 /***/ }),
 
@@ -174,70 +183,59 @@ function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Layout_Header_Navigation__ = __webpack_require__("./components/Layout/Header/Navigation.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Layout_css__ = __webpack_require__("./components/Layout.css");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Layout_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__Layout_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Forms_SearchComponent__ = __webpack_require__("./components/Forms/SearchComponent.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Forms_SearchComponent__ = __webpack_require__("./components/Forms/SearchComponent.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_antd__ = __webpack_require__("antd");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_antd__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\Layout.js";
-
-// import Navigation from './Header/Navigation'
-
- // import Footer from './Layout/Footer/Footer'
+var _jsxFileName = "/home/abdurahman/Desktop/dua_app/components/Layout.js";
 
 
 
 
 
-var Layout = function Layout(props) {
+
+
+var Layout = function Layout(_ref) {
+  var children = _ref.children;
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 8
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_head___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 9
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 10
     }
   }, "Dua application"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
     rel: "stylesheet",
     href: "/_next/static/style.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 11
     }
   }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
     rel: "stylesheet",
     href: "../node_modules/antd/dist/antd.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 12
     }
   }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
     rel: "stylesheet",
     href: "https://cdnjs.cloudflare.com/ajax/libs/antd/3.7.0/antd.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 13
     }
   })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Layout_Header_Navigation__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18
-    }
-  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    }
-  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
     }
   }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_antd__["Row"], {
     __source: {
@@ -251,7 +249,7 @@ var Layout = function Layout(props) {
       fileName: _jsxFileName,
       lineNumber: 21
     }
-  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Forms_SearchComponent__["a" /* default */], {
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Forms_SearchComponent__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 22
@@ -264,7 +262,7 @@ var Layout = function Layout(props) {
       fileName: _jsxFileName,
       lineNumber: 25
     }
-  }, props.children));
+  }, children));
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (Layout);
@@ -290,7 +288,7 @@ var Layout = function Layout(props) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_antd__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Navigation_css__ = __webpack_require__("./components/Layout/Header/Navigation.css");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Navigation_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__Navigation_css__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\Layout\\Header\\Navigation.js";
+var _jsxFileName = "/home/abdurahman/Desktop/dua_app/components/Layout/Header/Navigation.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -364,8 +362,8 @@ function (_React$Component) {
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         style: {
-          display: "inline-block",
-          float: "left"
+          display: 'inline-block',
+          float: 'left'
         },
         __source: {
           fileName: _jsxFileName,
@@ -393,55 +391,55 @@ function (_React$Component) {
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 38
         }
       }, "Home"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_antd__["Menu"].Item, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 41
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
         href: "/about",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 42
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 43
         }
       }, "About"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_antd__["Menu"].Item, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 46
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
         href: "/contact",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 47
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 48
         }
       }, "Contact"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_antd__["Menu"].Item, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 51
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
         href: "/login",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 52
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 53
         }
       }, "Log in"))));
     }
@@ -462,7 +460,7 @@ function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd__ = __webpack_require__("antd");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd__);
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\components\\Login\\Login.js";
+var _jsxFileName = "/home/abdurahman/Desktop/dua_app/components/Login/Login.js";
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -542,14 +540,14 @@ function (_React$Component) {
         onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 38
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(FormItem, {
         validateStatus: userNameError ? 'error' : '',
         help: userNameError || '',
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 39
         }
       }, getFieldDecorator('userName', {
         rules: [{
@@ -564,20 +562,20 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39
+            lineNumber: 47
           }
         }),
         placeholder: "Username",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 46
         }
       }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(FormItem, {
         validateStatus: passwordError ? 'error' : '',
         help: passwordError || '',
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 52
         }
       }, getFieldDecorator('password', {
         rules: [{
@@ -592,19 +590,19 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 49
+            lineNumber: 60
           }
         }),
         type: "password",
         placeholder: "Password",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 59
         }
       }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(FormItem, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 66
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Button"], {
         type: "primary",
@@ -612,7 +610,7 @@ function (_React$Component) {
         disabled: hasErrors(getFieldsError()),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 67
         }
       }, "Log in")));
     }
@@ -636,7 +634,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Layout__ = __webpack_require__("./components/Layout.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Login_Login__ = __webpack_require__("./components/Login/Login.js");
-var _jsxFileName = "C:\\Users\\Acer\\Desktop\\dua_app\\pages\\login.js";
+var _jsxFileName = "/home/abdurahman/Desktop/dua_app/pages/login.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -676,12 +674,12 @@ function (_Component) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_Layout__["a" /* default */], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 13
+          lineNumber: 12
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_Login_Login__["a" /* default */], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 14
+          lineNumber: 13
         }
       }));
     }
@@ -694,7 +692,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 5:
+/***/ 6:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/login.js");
